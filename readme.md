@@ -221,22 +221,119 @@ https://drive.google.com/file/d/15ZP1rG5FiBvqw1DI36_1mApZc4zf6vcP/view?usp=shari
 
 ---
 
-## ⚠️ Common Errors & Fixes
+## ⚠️ Challenges I faced
 
-### PermissionError while saving
 
-Use filename, not folder:
 
-❌ `outputs/`
-✅ `outputs/presentation.pptx`
+🧩 Challenges & Issues Faced
+1️⃣ Local LLM Download Issues (Storage & Performance)
 
----
+Initially, the system used locally hosted HuggingFace models.
+Large models (~14GB) were downloaded automatically, which caused:
 
-### ddgs module missing
+Long download times
+High disk usage
+Heavy RAM/GPU requirements
+Slow initialization
 
-```bash
+Solution
+
+Switched to cloud-based HuggingFace Inference API instead of local model loading.
+
+2️⃣ HuggingFace Model Compatibility Errors
+
+Multiple errors occurred while selecting models:
+
+model_not_supported
+model_not_found
+task not supported for provider
+
+Cause:
+
+Some models support only chat-completion
+Some providers were not enabled
+Incorrect model IDs
+
+Solution
+
+Migrated to supported chat-completion models
+Updated API endpoint usage
+Configured HuggingFace token correctly.
+3️⃣ Deprecated HuggingFace API Endpoint
+
+Error received:
+
+https://api-inference.huggingface.co is no longer supported
+
+Solution
+
+Updated inference calls to:
+
+https://router.huggingface.co/v1/chat/completions
+4️⃣ Python Dependency Issues
+
+Missing packages caused runtime failures:
+
+ModuleNotFoundError: transformers
+ModuleNotFoundError: duckduckgo_search
+ModuleNotFoundError: ddgs
+
+Solution
+
+Installed required dependencies and updated renamed packages:
+
+pip install transformers
 pip install ddgs
-```
+5️⃣ Agent Architecture Initialization Errors
+
+Errors like:
+
+TypeError: object.__init__() takes exactly one argument
+BaseAgent.__init__() missing arguments
+
+Cause:
+
+Improper inheritance setup
+Agents not calling parent constructor.
+
+Solution
+
+Standardized all agents to initialize using:
+
+super().__init__(name, role)
+6️⃣ Function Signature Mismatch
+
+Error:
+
+create_ppt() takes 2–3 arguments but 4 were given
+
+Cause:
+
+Controller passed (topic, content, theme)
+Agent expected fewer parameters.
+
+Solution
+
+Unified interface across agents.
+
+7️⃣ Invalid LLM Output Format
+
+Early PPTs contained:
+
+Blank slides
+Raw API error text
+Improper layouts
+
+Cause:
+LLM returned free-form text instead of structured data.
+
+Solution
+
+Forced strict JSON output using prompt constraints:
+
+Fixed schema
+Bullet limits
+No markdown rules
 
 ---
 
