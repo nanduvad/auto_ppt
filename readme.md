@@ -214,14 +214,10 @@ Exports `.pptx` locally.
 
 ---
 
-## 📸 Screenshots (Add Later)
+## 📸 OUTPUT VIDEO 
 
-```
-/screenshots/demo1.png
-/screenshots/demo2.png
-```
 
-(Add generated PPT screenshots here for GitHub showcase.)
+https://drive.google.com/file/d/15ZP1rG5FiBvqw1DI36_1mApZc4zf6vcP/view?usp=sharing
 
 ---
 
