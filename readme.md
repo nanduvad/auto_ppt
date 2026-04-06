@@ -15,8 +15,9 @@ An **AI-powered autonomous agent system** that generates **professional PowerPoi
 ### Input
 
 ``` 
-Topic: Quantum Computing
-Theme: dark
+Topic: Any Topic of your choice
+Theme: dark/corporate/modern/minimal(any one of your choice)
+Location :where you want to save your ppt on your desktop 
 ```
 
 ### Output
@@ -159,7 +160,7 @@ HF_TOKEN=your_huggingface_token_here
 Get token from:
 https://huggingface.co/settings/tokens
 
-(Read access is sufficient.)
+(finegrained.)
 
 ---
 
