@@ -1,0 +1,89 @@
+# ==============================
+
+# Python Cache & Compiled Files
+
+# ==============================
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+# ==============================
+
+# Virtual Environment
+
+# ==============================
+
+venv/
+env/
+.venv/
+
+# ==============================
+
+# Environment Variables (SECRET)
+
+# ==============================
+
+.env
+
+
+
+# ==============================
+
+# IDE / Editor Files
+
+# ==============================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==============================
+
+# OS Files
+
+# ==============================
+
+.DS_Store
+Thumbs.db
+
+# ==============================
+
+# Logs & Temporary Files
+
+# ==============================
+
+*.log
+tmp/
+temp/
+
+# ==============================
+
+# HuggingFace / Model Cache
+
+# (prevents huge uploads)
+
+# ==============================
+
+.cache/
+huggingface/
+hf_cache/
+
+# ==============================
+
+# Python Packaging
+
+# ==============================
+
+build/
+dist/
+*.egg-info/
+
+# ==============================
+
+# Jupyter Notebook Checkpoints
+
+# ==============================
+
+.ipynb_checkpoints/
